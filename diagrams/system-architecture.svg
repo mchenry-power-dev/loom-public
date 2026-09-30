@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1180" viewBox="0 0 1200 1180" role="img" aria-labelledby="title description">
+<title id="title">Loom system architecture</title>
+<desc id="description">Merchant and storefront flows, authenticated lifecycle intake, durable worker processing and merchant review. Services and workers share relational persistence and support reporting and notification previews. A separately authorized fulfillment request leads to an external provider decision.</desc>
+<defs>
+<marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+<path d="M1 1 L7 4 L1 7" fill="none" stroke="#526779" stroke-width="1.3"/>
+</marker>
+<marker id="back" markerWidth="8" markerHeight="8" refX="1" refY="4" orient="auto">
+<path d="M7 1 L1 4 L7 7" fill="none" stroke="#526779" stroke-width="1.3"/>
+</marker>
+</defs>
+<rect width="1200" height="1180" rx="16" fill="#f8fafc"/>
+<g font-family="Segoe UI, Arial, sans-serif">
+<text x="40" y="52" fill="#172a3a" font-size="30" font-weight="650">Loom / System architecture</text>
+<text x="40" y="84" fill="#526779" font-size="18" font-weight="400">Conceptual responsibilities and boundaries &#183; Private pilot product</text>
+<text x="40" y="132" fill="#14685f" font-size="15" font-weight="700">MERCHANT CONFIGURATION AND COMMERCE VISIBILITY</text>
+<g data-box="40,152,254,100">
+<rect x="40" y="152" width="254" height="100" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="60" y="183" fill="#172a3a" font-size="20" font-weight="600">Merchant in</text>
+<text x="60" y="209" fill="#172a3a" font-size="20" font-weight="600">Shopify Admin</text>
+</g>
+<g data-box="328,152,254,100">
+<rect x="328" y="152" width="254" height="100" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="348" y="183" fill="#172a3a" font-size="20" font-weight="600">Embedded workspace</text>
+<text x="348" y="214" fill="#526779" font-size="17" font-weight="400">Purchase-option extension</text>
+</g>
+<g data-box="616,152,254,100">
+<rect x="616" y="152" width="254" height="100" rx="12" fill="#eaf5f2" stroke="#cbd6df"/>
+<text x="636" y="183" fill="#172a3a" font-size="20" font-weight="600">Application services</text>
+<text x="636" y="214" fill="#526779" font-size="17" font-weight="400">Configuration and review</text>
+</g>
+<g data-box="904,152,254,100">
+<rect x="904" y="152" width="254" height="100" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="924" y="183" fill="#172a3a" font-size="20" font-weight="600">Shopify commerce APIs</text>
+<text x="924" y="214" fill="#526779" font-size="17" font-weight="400">Authoritative commerce data</text>
+</g>
+<path d="M294 202 H328" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M582 202 H616" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M870 202 H904" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)" marker-start="url(#back)"/>
+<text x="40" y="292" fill="#14685f" font-size="15" font-weight="700">CUSTOMER PURCHASE AND SCHEDULE INTENT</text>
+<g data-box="40,312,254,100">
+<rect x="40" y="312" width="254" height="100" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="60" y="343" fill="#172a3a" font-size="20" font-weight="600">Customer on storefront</text>
+</g>
+<g data-box="328,312,254,100">
+<rect x="328" y="312" width="254" height="100" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="348" y="343" fill="#172a3a" font-size="20" font-weight="600">Purchase selector</text>
+<text x="348" y="374" fill="#526779" font-size="17" font-weight="400">Option and first fulfillment</text>
+</g>
+<g data-box="616,312,254,100">
+<rect x="616" y="312" width="254" height="100" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="636" y="343" fill="#172a3a" font-size="20" font-weight="600">Shopify checkout</text>
+<text x="636" y="374" fill="#526779" font-size="17" font-weight="400">Checkout and initial payment</text>
+</g>
+<g data-box="904,312,254,100">
+<rect x="904" y="312" width="254" height="100" rx="12" fill="#eaf5f2" stroke="#cbd6df"/>
+<text x="924" y="343" fill="#172a3a" font-size="20" font-weight="600">Scheduling validation</text>
+<text x="924" y="374" fill="#526779" font-size="17" font-weight="400">Preview is not execution</text>
+</g>
+<path d="M294 362 H328" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M582 362 H616" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M870 362 H904" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="452" fill="#14685f" font-size="15" font-weight="700">ASYNCHRONOUS COMMERCE EVIDENCE</text>
+<g data-box="40,472,254,100">
+<rect x="40" y="472" width="254" height="100" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="60" y="503" fill="#172a3a" font-size="20" font-weight="600">Shopify lifecycle events</text>
+</g>
+<g data-box="328,472,254,100">
+<rect x="328" y="472" width="254" height="100" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="348" y="503" fill="#172a3a" font-size="20" font-weight="600">Authenticated intake</text>
+<text x="348" y="534" fill="#526779" font-size="17" font-weight="400">Accepted event evidence</text>
+</g>
+<g data-box="616,472,254,100">
+<rect x="616" y="472" width="254" height="100" rx="12" fill="#eaf5f2" stroke="#cbd6df"/>
+<text x="636" y="503" fill="#172a3a" font-size="20" font-weight="600">Durable work queue</text>
+<text x="636" y="534" fill="#526779" font-size="17" font-weight="400">Recoverable work</text>
+</g>
+<g data-box="904,472,254,100">
+<rect x="904" y="472" width="254" height="100" rx="12" fill="#eaf5f2" stroke="#cbd6df"/>
+<text x="924" y="503" fill="#172a3a" font-size="20" font-weight="600">Worker</text>
+<text x="924" y="534" fill="#526779" font-size="17" font-weight="400">Separate from web process</text>
+</g>
+<path d="M294 522 H328" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M582 522 H616" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M870 522 H904" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<g data-box="904,612,254,100">
+<rect x="904" y="612" width="254" height="100" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="924" y="643" fill="#172a3a" font-size="20" font-weight="600">Correlation / validation</text>
+<text x="924" y="674" fill="#526779" font-size="17" font-weight="400">Proposed operations</text>
+</g>
+<g data-box="616,612,254,100">
+<rect x="616" y="612" width="254" height="100" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="636" y="643" fill="#172a3a" font-size="20" font-weight="600">Merchant review</text>
+<text x="636" y="674" fill="#526779" font-size="17" font-weight="400">Evidence and eligibility</text>
+</g>
+<path d="M1031 572 V612" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M904 662 H870" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="639" fill="#526779" font-size="18" font-weight="400">Related evidence can arrive late or more than once.</text>
+<text x="40" y="667" fill="#526779" font-size="18" font-weight="400">Incomplete evidence remains visible; it is not success.</text>
+<text x="40" y="767" fill="#14685f" font-size="15" font-weight="700">SHARED STATE AND DERIVED VIEWS</text>
+<g data-box="40,787,300,108">
+<rect x="40" y="787" width="300" height="108" rx="12" fill="#eaf5f2" stroke="#cbd6df"/>
+<text x="60" y="818" fill="#172a3a" font-size="20" font-weight="600">Application services</text>
+<text x="60" y="844" fill="#172a3a" font-size="20" font-weight="600">+ worker</text>
+</g>
+<g data-box="392,787,342,108">
+<rect x="392" y="787" width="342" height="108" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="412" y="818" fill="#172a3a" font-size="20" font-weight="600">Relational persistence</text>
+<text x="412" y="849" fill="#526779" font-size="17" font-weight="400">Application state and work evidence</text>
+</g>
+<g data-box="790,776,368,65">
+<rect x="790" y="776" width="368" height="65" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="810" y="807" fill="#172a3a" font-size="20" font-weight="600">Reporting</text>
+</g>
+<g data-box="790,857,368,65">
+<rect x="790" y="857" width="368" height="65" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="810" y="888" fill="#172a3a" font-size="20" font-weight="600">Notification previews</text>
+</g>
+<path d="M340 841 H392" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)" marker-start="url(#back)"/>
+<path d="M734 841 H760 V808 H790" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M760 841 V889 H790" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="981" fill="#14685f" font-size="15" font-weight="700">SEPARATELY CONTROLLED HANDOFF &#183; PARTIAL / GATED</text>
+<g data-box="40,1001,340,100">
+<rect x="40" y="1001" width="340" height="100" rx="12" fill="#fff4df" stroke="#cbd6df"/>
+<text x="60" y="1032" fill="#172a3a" font-size="20" font-weight="600">Separately authorized action</text>
+<text x="60" y="1063" fill="#526779" font-size="17" font-weight="400">Eligibility alone is not authorization</text>
+</g>
+<g data-box="430,1001,340,100">
+<rect x="430" y="1001" width="340" height="100" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="450" y="1032" fill="#172a3a" font-size="20" font-weight="600">Shopify fulfillment request</text>
+<text x="450" y="1063" fill="#526779" font-size="17" font-weight="400">Request is not physical fulfillment</text>
+</g>
+<g data-box="820,1001,338,100">
+<rect x="820" y="1001" width="338" height="100" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="840" y="1032" fill="#172a3a" font-size="20" font-weight="600">External provider decision</text>
+<text x="840" y="1063" fill="#526779" font-size="17" font-weight="400">Provider retains its own decision</text>
+</g>
+<path d="M380 1051 H430" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M770 1051 H820" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="1144" fill="#526779" font-size="16" font-weight="400">Public abstraction &#183; No endpoints, identifiers, schema details, or operational recipes</text>
+</g>
+</svg>

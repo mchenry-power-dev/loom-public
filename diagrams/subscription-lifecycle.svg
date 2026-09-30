@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="810" viewBox="0 0 1200 810" role="img" aria-labelledby="title description">
+<title id="title">Loom subscription lifecycle</title>
+<desc id="description">Configure purchase options, synchronize selling plans, customer choice, checkout and initial payment, order and contract events, correlation and validation, proposed schedule and review, separately controlled fulfillment handoff. Visibility and reporting run alongside; broader automation, self-service and delivered notifications are future scope.</desc>
+<defs>
+<marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+<path d="M1 1 L7 4 L1 7" fill="none" stroke="#526779" stroke-width="1.3"/>
+</marker>
+<marker id="back" markerWidth="8" markerHeight="8" refX="1" refY="4" orient="auto">
+<path d="M7 1 L1 4 L7 7" fill="none" stroke="#526779" stroke-width="1.3"/>
+</marker>
+</defs>
+<rect width="1200" height="810" rx="16" fill="#f8fafc"/>
+<g font-family="Segoe UI, Arial, sans-serif">
+<text x="40" y="52" fill="#172a3a" font-size="30" font-weight="650">Loom / Subscription lifecycle</text>
+<text x="40" y="84" fill="#526779" font-size="18" font-weight="400">Purchase, commerce evidence, and physical-delivery intent are separate concerns</text>
+<text x="40" y="132" fill="#14685f" font-size="15" font-weight="700">CONFIGURE AND PURCHASE</text>
+<g data-box="40,152,254,108">
+<rect x="40" y="152" width="254" height="108" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="60" y="183" fill="#172a3a" font-size="20" font-weight="600">01  Configure</text>
+<text x="60" y="214" fill="#526779" font-size="17" font-weight="400">Product purchase options</text>
+</g>
+<g data-box="328,152,254,108">
+<rect x="328" y="152" width="254" height="108" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="348" y="183" fill="#172a3a" font-size="20" font-weight="600">02  Synchronize</text>
+<text x="348" y="214" fill="#526779" font-size="17" font-weight="400">Stable selling plans</text>
+</g>
+<g data-box="616,152,254,108">
+<rect x="616" y="152" width="254" height="108" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="636" y="183" fill="#172a3a" font-size="20" font-weight="600">03  Customer chooses</text>
+<text x="636" y="214" fill="#526779" font-size="17" font-weight="400">Purchase option</text>
+</g>
+<g data-box="904,152,254,108">
+<rect x="904" y="152" width="254" height="108" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="924" y="183" fill="#172a3a" font-size="20" font-weight="600">04  Shopify checkout</text>
+<text x="924" y="214" fill="#526779" font-size="17" font-weight="400">Initial payment</text>
+</g>
+<path d="M294 206 H328" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M582 206 H616" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M870 206 H904" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="316" fill="#14685f" font-size="15" font-weight="700">ESTABLISH EVIDENCE AND REVIEW &#183; CONTINUES FROM CHECKOUT ON THE RIGHT</text>
+<g data-box="904,338,254,128">
+<rect x="904" y="338" width="254" height="128" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="924" y="369" fill="#172a3a" font-size="20" font-weight="600">05  Receive events</text>
+<text x="924" y="400" fill="#526779" font-size="17" font-weight="400">Order / contract evidence</text>
+</g>
+<g data-box="616,338,254,128">
+<rect x="616" y="338" width="254" height="128" rx="12" fill="#eaf5f2" stroke="#cbd6df"/>
+<text x="636" y="369" fill="#172a3a" font-size="20" font-weight="600">06  Correlate</text>
+<text x="636" y="400" fill="#526779" font-size="17" font-weight="400">Validate available evidence</text>
+</g>
+<g data-box="328,338,254,128">
+<rect x="328" y="338" width="254" height="128" rx="12" fill="#eaf5f2" stroke="#cbd6df"/>
+<text x="348" y="369" fill="#172a3a" font-size="20" font-weight="600">07  Propose and review</text>
+<text x="348" y="400" fill="#526779" font-size="17" font-weight="400">Schedule proposal</text>
+<text x="348" y="423" fill="#526779" font-size="17" font-weight="400">Merchant review</text>
+</g>
+<g data-box="40,338,254,128">
+<rect x="40" y="338" width="254" height="128" rx="12" fill="#fff4df" stroke="#cbd6df"/>
+<text x="60" y="369" fill="#172a3a" font-size="20" font-weight="600">08  Controlled handoff</text>
+<text x="60" y="400" fill="#526779" font-size="17" font-weight="400">Separately authorized</text>
+<text x="60" y="423" fill="#526779" font-size="17" font-weight="400">Partial / gated</text>
+</g>
+<path d="M1031 260 V338" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M904 402 H870" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M616 402 H582" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M328 402 H294" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="532" fill="#14685f" font-size="15" font-weight="700">ALONGSIDE THE LIFECYCLE</text>
+<rect x="40" y="551" width="1118" height="72" rx="12" fill="#eaf5f2" stroke="#cbd6df"/>
+<text x="62" y="594" fill="#172a3a" font-size="21" font-weight="500">Contract visibility    &#183;    Billing evidence    &#183;    Audit history    &#183;    Analytics / reporting</text>
+<rect x="40" y="656" width="1118" height="78" rx="12" fill="white" stroke="#cbd6df" stroke-dasharray="6 5"/>
+<text x="62" y="687" fill="#14685f" font-size="14" font-weight="700">FUTURE SCOPE</text>
+<text x="62" y="715" fill="#526779" font-size="20" font-weight="400">Broader lifecycle automation    &#183;    Customer self-service    &#183;    Delivered notifications</text>
+<text x="40" y="777" fill="#526779" font-size="17" font-weight="400">Payment is not fulfillment. A schedule preview does not execute a handoff.</text>
+</g>
+</svg>

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="875" viewBox="0 0 1200 875" role="img" aria-labelledby="title description">
+<title id="title">Loom external action safety</title>
+<desc id="description">Eligibility and separate authorization precede an external request. Confirmed outcomes record only the established scope. Rejected outcomes need reassessment. Unknown outcomes require reconciliation or manual review without blind retry; remote effects may not be reversible.</desc>
+<defs>
+<marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+<path d="M1 1 L7 4 L1 7" fill="none" stroke="#526779" stroke-width="1.3"/>
+</marker>
+<marker id="back" markerWidth="8" markerHeight="8" refX="1" refY="4" orient="auto">
+<path d="M7 1 L1 4 L7 7" fill="none" stroke="#526779" stroke-width="1.3"/>
+</marker>
+</defs>
+<rect width="1200" height="875" rx="16" fill="#f8fafc"/>
+<g font-family="Segoe UI, Arial, sans-serif">
+<text x="40" y="52" fill="#172a3a" font-size="30" font-weight="650">Loom / External action safety</text>
+<text x="40" y="84" fill="#526779" font-size="18" font-weight="400">Conceptual safety model &#183; Controlled submission and recovery remain partial / gated</text>
+<g data-box="40,151,330,111">
+<rect x="40" y="151" width="330" height="111" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="60" y="182" fill="#172a3a" font-size="20" font-weight="600">Establish eligibility</text>
+<text x="60" y="213" fill="#526779" font-size="17" font-weight="400">A proposal passes its checks</text>
+</g>
+<g data-box="435,151,330,111">
+<rect x="435" y="151" width="330" height="111" rx="12" fill="#fff4df" stroke="#cbd6df"/>
+<text x="455" y="182" fill="#172a3a" font-size="20" font-weight="600">Separate authorization</text>
+<text x="455" y="213" fill="#526779" font-size="17" font-weight="400">Eligibility alone is insufficient</text>
+</g>
+<g data-box="830,151,330,111">
+<rect x="830" y="151" width="330" height="111" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="850" y="182" fill="#172a3a" font-size="20" font-weight="600">External request</text>
+<text x="850" y="213" fill="#526779" font-size="17" font-weight="400">Observe outcome evidence</text>
+</g>
+<path d="M370 207 H435" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M765 207 H830" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M995 262 V319 H205 V372" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M600 319 V372" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M995 319 V372" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<g data-box="40,372,330,155">
+<rect x="40" y="372" width="330" height="155" rx="12" fill="#eaf5f2" stroke="#cbd6df"/>
+<text x="60" y="403" fill="#172a3a" font-size="20" font-weight="600">Confirmed</text>
+<text x="60" y="434" fill="#526779" font-size="17" font-weight="400">Authoritative evidence</text>
+<text x="60" y="457" fill="#526779" font-size="17" font-weight="400">establishes the requested effect</text>
+</g>
+<g data-box="435,372,330,155">
+<rect x="435" y="372" width="330" height="155" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="455" y="403" fill="#172a3a" font-size="20" font-weight="600">Rejected</text>
+<text x="455" y="434" fill="#526779" font-size="17" font-weight="400">Conclusive evidence</text>
+<text x="455" y="457" fill="#526779" font-size="17" font-weight="400">establishes rejection</text>
+</g>
+<g data-box="830,372,330,155">
+<rect x="830" y="372" width="330" height="155" rx="12" fill="#fff4df" stroke="#cbd6df"/>
+<text x="850" y="403" fill="#172a3a" font-size="20" font-weight="600">Unknown</text>
+<text x="850" y="434" fill="#526779" font-size="17" font-weight="400">Timeout or incomplete evidence</text>
+<text x="850" y="457" fill="#526779" font-size="17" font-weight="400">Effect may already exist</text>
+</g>
+<g data-box="40,590,330,125">
+<rect x="40" y="590" width="330" height="125" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="60" y="621" fill="#172a3a" font-size="20" font-weight="600">Record confirmed scope</text>
+<text x="60" y="652" fill="#526779" font-size="17" font-weight="400">Acceptance does not prove</text>
+<text x="60" y="675" fill="#526779" font-size="17" font-weight="400">physical fulfillment</text>
+</g>
+<g data-box="435,590,330,125">
+<rect x="435" y="590" width="330" height="125" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="455" y="621" fill="#172a3a" font-size="20" font-weight="600">Explain and reassess</text>
+<text x="455" y="652" fill="#526779" font-size="17" font-weight="400">A new attempt needs its own</text>
+<text x="455" y="675" fill="#526779" font-size="17" font-weight="400">review and authorization</text>
+</g>
+<g data-box="830,590,330,125">
+<rect x="830" y="590" width="330" height="125" rx="12" fill="#fff4df" stroke="#cbd6df"/>
+<text x="850" y="621" fill="#172a3a" font-size="20" font-weight="600">Reconcile / manual review</text>
+<text x="850" y="652" fill="#526779" font-size="17" font-weight="400">No blind retry</text>
+<text x="850" y="675" fill="#526779" font-size="17" font-weight="400">Keep unresolved if inconclusive</text>
+</g>
+<path d="M205 527 V590" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M600 527 V590" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M995 527 V590" fill="none" stroke="#526779" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="40" y="766" width="1120" height="70" rx="12" fill="white" stroke="#cbd6df"/>
+<text x="62" y="809" fill="#172a3a" font-size="20" font-weight="500">A local reversal does not undo a remote side effect. No universal rollback guarantee is made.</text>
+</g>
+</svg>
