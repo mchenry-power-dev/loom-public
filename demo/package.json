@@ -1,0 +1,50 @@
+{
+  "name": "loom-public-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b --pretty false",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "test:visual": "playwright test --config playwright.visual.config.ts",
+    "measure:load": "node tests/performance/cold-load.mjs",
+    "notices:check": "node scripts/generate-notices.mjs --check",
+    "format:check": "prettier --check src tests scripts *.ts *.json index.html",
+    "check": "npm run typecheck && npm test && npm run build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "jspdf": "^4.2.1",
+    "jszip": "^3.10.2",
+    "lucide-react": "^1.52.0",
+    "pptxgenjs": "^4.0.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "exceljs": "^4.4.0",
+    "prettier": "^3.9.9",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.2",
+    "vitest": "^5.0.3"
+  },
+  "overrides": {
+    "exceljs": {
+      "uuid": "11.1.1"
+    },
+    "pptxgenjs": {
+      "image-size": "2.0.3"
+    }
+  }
+}

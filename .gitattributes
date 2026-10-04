@@ -1,0 +1,7 @@
+/.gitattributes text eol=lf
+/.gitignore text eol=lf
+/.github/workflows/demo.yml text eol=lf
+/demo/** text=auto eol=lf
+/docs/demo-*.md text eol=lf
+/docs/demo-images/README.md text eol=lf
+/docs/demo-images/*.png binary
