@@ -1,0 +1,287 @@
+.analytics-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.analytics-controls .field {
+  width: 180px;
+}
+.analytics-metrics {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.analytics-metric {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 15px;
+  min-width: 0;
+}
+.analytics-metric .metric-title {
+  font-size: 13px;
+}
+.analytics-value {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 7px 0 14px;
+}
+.analytics-value > strong {
+  font-size: 29px;
+  letter-spacing: -0.8px;
+}
+.analytics-value > span {
+  font-size: 12px;
+}
+.analytics-metric .metric-foot {
+  font-size: 11px;
+}
+.analytics-metric .sparkline {
+  color: #00a37b;
+  width: 63px;
+  max-width: 30%;
+}
+.analytics-main-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 20px;
+}
+.analytics-main-grid .toolbar .select-wrap {
+  width: auto;
+  min-width: 80px;
+}
+.analytics-main-grid .panel-header p {
+  font-size: 12px;
+}
+.product-ranking {
+  overflow: auto;
+}
+.product-ranking table {
+  font-size: 13px;
+}
+.product-ranking td,
+.product-ranking th {
+  padding: 12px 8px;
+  white-space: nowrap;
+}
+.product-ranking td:nth-child(2) {
+  white-space: normal;
+  min-width: 155px;
+}
+.product-ranking td a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #283755;
+}
+.product-ranking .product-art.small {
+  width: 30px;
+  height: 36px;
+  flex-shrink: 0;
+}
+.store-insights {
+  background: #f2f0ff;
+  border: 1px solid #ddd6ff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 6px;
+}
+.store-insights .section-heading {
+  margin: 0;
+}
+.store-insights .section-heading > svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.store-insights-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 2fr);
+  gap: 18px;
+}
+.store-insight-list {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+.store-insight-list > button {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 12px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: white;
+  color: #425978;
+  padding: 14px;
+}
+.store-insight-list > button.active {
+  background: #eae5ff;
+  border-color: #d9d1ff;
+  color: var(--accent);
+}
+.store-insight-list > button > span {
+  flex: 1;
+  min-width: 0;
+}
+.store-insight-list strong {
+  font-size: 13px;
+  display: block;
+}
+.store-insight-list small {
+  font-size: 11px;
+  display: block;
+  margin-top: 5px;
+}
+.store-insights .insight-analysis {
+  margin: 0;
+}
+.store-insights .insight-panel-heading {
+  display: none;
+}
+.analytics-main-grid > .panel {
+  min-width: 0;
+}
+@media (max-width: 1250px) {
+  .analytics-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .analytics-main-grid {
+    grid-template-columns: 1fr;
+  }
+  .analytics-metric {
+    padding: 13px;
+  }
+  .analytics-value > strong {
+    font-size: 26px;
+  }
+  .product-ranking td:nth-child(2) {
+    width: 45%;
+  }
+}
+@media (max-width: 900px) {
+  .store-insights-grid {
+    grid-template-columns: 1fr;
+  }
+  .store-insight-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .analytics-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .analytics-controls .field {
+    width: 100%;
+  }
+  .analytics-controls > .button {
+    grid-column: 1/-1;
+  }
+  .analytics-metrics {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .analytics-metric {
+    padding: 11px;
+  }
+  .analytics-metric .metric-title {
+    font-size: 12px;
+  }
+  .analytics-value {
+    margin: 10px 0;
+    gap: 6px;
+  }
+  .analytics-value > strong {
+    font-size: 25px;
+  }
+  .analytics-value > span {
+    font-size: 11px;
+  }
+  .analytics-metric:last-child {
+    grid-column: 1/-1;
+  }
+  .analytics-metric:last-child .analytics-value {
+    display: inline-flex;
+    margin-right: 15px;
+  }
+  .analytics-main-grid {
+    gap: 0;
+  }
+  .analytics-main-grid .panel-header .toolbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .analytics-main-grid .panel-header .toolbar .select-wrap {
+    width: 100%;
+  }
+  .store-insights {
+    padding: 12px;
+  }
+  .store-insights .section-heading h2 {
+    font-size: 19px;
+  }
+  .store-insights .section-heading p {
+    font-size: 12px;
+  }
+  .store-insight-list {
+    grid-template-columns: 1fr;
+  }
+  .store-insight-list > button {
+    min-height: 64px;
+  }
+  .product-ranking table {
+    min-width: 480px;
+    font-size: 13px;
+  }
+  .store-insights-grid {
+    gap: 12px;
+  }
+  .store-insights .insight-analysis {
+    padding: 14px;
+  }
+  .store-insights .insight-actions .button {
+    flex-basis: 45%;
+  }
+}
+@media (min-width: 1251px) {
+  .analytics-controls {
+    margin-top: -64px;
+    margin-bottom: 25px;
+  }
+  .analytics-controls .field {
+    width: 160px;
+  }
+  .analytics-controls .field > label {
+    position: absolute;
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .product-ranking td {
+    padding: 8px;
+  }
+  .product-ranking .product-art.small {
+    height: 30px;
+  }
+  .store-insights .insight-analysis.compact .insight-actions .button {
+    flex: 1 1 0;
+    min-width: 100px;
+  }
+}
+.store-insights .insight-analysis.compact .insight-facts,
+.store-insights .insight-analysis.compact .analysis-tabs {
+  display: none;
+}
+.store-insights .insight-analysis.compact .insight-next {
+  padding: 12px 0 18px;
+}
+.store-insights .insight-analysis.compact .insight-summary {
+  margin-top: 12px;
+}

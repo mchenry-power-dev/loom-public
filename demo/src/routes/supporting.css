@@ -1,0 +1,268 @@
+.supporting-route {
+  min-width: 0;
+}
+.home-intro {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+}
+.home-intro > .icon-tile {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+}
+.home-intro p {
+  margin-top: 6px;
+  max-width: 700px;
+}
+.home-shortcuts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.home-shortcut {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--ink);
+  padding: 24px;
+  min-height: 250px;
+}
+.home-shortcut:hover {
+  text-decoration: none;
+  border-color: #b5a8ff;
+  background: #fdfcff;
+}
+.home-shortcut p {
+  font-size: 14px;
+}
+.shortcut-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  color: var(--accent);
+  font-size: 14px;
+}
+.support-copy {
+  margin: 14px 0;
+}
+.support-spaced {
+  margin-top: 18px;
+}
+.integration-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.integration-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+  margin-bottom: 0;
+}
+.integration-card .section-heading {
+  margin: 0;
+}
+.integration-card p {
+  font-size: 14px;
+  flex: 1;
+}
+.integration-card .button {
+  white-space: normal;
+  text-align: left;
+  line-height: 1.4;
+  margin-top: 4px;
+}
+.integration-grid + a {
+  margin-top: 18px;
+}
+.settings-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(300px, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.about-definition {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+  font-size: 13px;
+}
+.about-definition dt {
+  color: var(--muted);
+}
+.about-definition dd {
+  margin: 0;
+  text-align: right;
+}
+.local-activity {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+.local-activity li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.support-back {
+  margin-bottom: 14px;
+}
+.support-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 22px;
+  align-items: start;
+}
+.support-customer {
+  display: block;
+  margin-top: 4px;
+}
+.support-table {
+  overflow: auto;
+}
+.support-table td {
+  font-size: 13px;
+}
+.support-table td .button {
+  font-size: 13px;
+}
+.support-table th {
+  font-size: 12px;
+}
+.support-cards {
+  display: none;
+}
+.support-filters {
+  margin: 20px 0;
+}
+.supporting-route .check-line {
+  line-height: 1.5;
+}
+.supporting-route .settings-layout > section p {
+  line-height: 1.6;
+}
+@media (max-width: 1100px) {
+  .home-shortcuts {
+    grid-template-columns: 1fr;
+  }
+  .home-shortcut {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 10px 16px;
+  }
+  .home-shortcut > .icon-tile {
+    grid-row: 1/4;
+  }
+  .home-shortcut h3,
+  .home-shortcut p,
+  .home-shortcut .shortcut-action {
+    grid-column: 2;
+  }
+  .integration-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .settings-layout {
+    grid-template-columns: 1fr;
+  }
+  .home-intro {
+    padding: 20px;
+  }
+}
+@media (max-width: 640px) {
+  .home-intro {
+    padding: 16px;
+    align-items: start;
+  }
+  .home-intro > .icon-tile {
+    width: 34px;
+    height: 34px;
+  }
+  .home-intro h2 {
+    line-height: 1.4;
+  }
+  .home-shortcuts {
+    gap: 0;
+  }
+  .home-shortcut {
+    padding: 18px 14px;
+  }
+  .integration-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .integration-card p {
+    font-size: 14px;
+  }
+  .integration-card .button {
+    width: 100%;
+    justify-content: center;
+  }
+  .settings-layout {
+    gap: 0;
+  }
+  .about-definition {
+    font-size: 13px;
+    gap: 14px;
+  }
+  .support-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .support-detail-grid .definition-list {
+    gap: 16px;
+    font-size: 14px;
+  }
+  .support-table {
+    display: none;
+  }
+  .support-cards {
+    display: grid;
+    gap: 16px;
+  }
+  .support-cards > article {
+    display: grid;
+    gap: 12px;
+    padding: 16px 0;
+    border-top: 1px solid var(--border);
+  }
+  .support-cards > article > .toolbar {
+    justify-content: space-between;
+  }
+  .support-cards h3 {
+    font-size: 15px;
+  }
+  .support-cards p {
+    font-size: 13px;
+  }
+  .support-filters {
+    gap: 14px;
+  }
+  .support-filters > .field {
+    flex-basis: 100%;
+  }
+  .supporting-route .toolbar > .button {
+    white-space: normal;
+  }
+  .supporting-route .check-line {
+    font-size: 14px;
+    align-items: start;
+  }
+  .supporting-route .check-line > input {
+    margin-top: 3px;
+  }
+  .support-back {
+    font-size: 14px !important;
+  }
+}

@@ -1,0 +1,117 @@
+name: Demo checks and Pages
+
+on:
+  push:
+    branches: [main, "feat/**"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  VITE_DEMO_COMMIT: ${{ github.sha }}
+
+concurrency:
+  group: demo-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+jobs:
+  checks:
+    name: Type, domain, exports, and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: demo/package-lock.json
+      - run: npm --prefix demo ci
+      - run: npm --prefix demo audit --audit-level=moderate
+      - run: npm --prefix demo run format:check
+      - run: node demo/scripts/generate-notices.mjs --check
+      - run: npm --prefix demo run check
+      - name: Preserve the checked static artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: checked-demo-${{ github.sha }}
+          path: demo/dist
+          if-no-files-found: error
+          retention-days: 7
+
+  browsers:
+    name: Browser / ${{ matrix.project }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - project: chromium-desktop
+            engine: chromium
+          - project: chromium-mobile
+            engine: chromium
+          - project: webkit-core
+            engine: webkit
+          - project: firefox-core
+            engine: firefox
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: demo/package-lock.json
+      - run: npm --prefix demo ci
+      - name: Install the browser and Linux dependencies
+        working-directory: demo
+        run: npx playwright install --with-deps ${{ matrix.engine }}
+      - name: Exercise the production build at its Pages base path
+        run: npm --prefix demo run test:e2e -- --project=${{ matrix.project }}
+      - name: Retain failure traces and screenshots
+        if: failure()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: browser-failure-${{ matrix.project }}-${{ github.sha }}
+          path: |
+            demo/playwright-report
+            demo/test-results
+          if-no-files-found: ignore
+          retention-days: 7
+
+  deploy:
+    name: Publish checked main to Pages
+    needs: [checks, browsers]
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download this commit's checked build
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: checked-demo-${{ github.sha }}
+          path: demo-dist
+      - name: Read repository Pages settings
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+      - name: Package only the built demo
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: demo-dist
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

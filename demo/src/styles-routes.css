@@ -1,0 +1,225 @@
+/* Route-specific layouts extend the shared screenshot-derived shell. */
+.compact-rows td {
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+.reduce-motion * {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+.field > label {
+  font-weight: 500;
+}
+.orders-period .field > label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.orders-period {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -69px;
+  margin-bottom: 32px;
+  pointer-events: none;
+}
+.orders-period .field {
+  width: 165px;
+  pointer-events: auto;
+}
+.orders-period .field > span:first-child {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.order-context .metric-value {
+  font-size: 24px;
+}
+.order-context .metric-title {
+  font-size: 11px;
+}
+.sort-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+}
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.order-lines {
+  margin-top: 18px;
+}
+.order-lines > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.column-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.scope-note {
+  font-size: 12px;
+  margin: 10px 2px;
+}
+.toast-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 0;
+  color: white;
+  padding: 5px;
+}
+.orders-period .select-wrap {
+  min-height: 37px;
+}
+@media (max-width: 1250px) {
+  .orders-period {
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+  .order-context .metric-title {
+    font-size: 12px;
+  }
+}
+@media (max-width: 640px) {
+  .orders-period .field {
+    width: 100%;
+  }
+  .order-context .metric-value {
+    font-size: 22px;
+  }
+  .table-panel > .filter-row > .field:first-child {
+    flex-basis: 100%;
+  }
+  .order-lines > div {
+    font-size: 14px;
+  }
+}
+.filter-row > .field:first-child {
+  width: 310px;
+}
+.filter-row .search-field {
+  width: 100%;
+}
+.order-mobile-list {
+  display: none;
+}
+.order-mobile-card {
+  border-top: 1px solid var(--border);
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+}
+.order-mobile-card .card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+.order-mobile-card .card-statuses {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.card-statuses > div {
+  display: grid;
+  gap: 4px;
+}
+.card-statuses .badge {
+  justify-self: start;
+}
+.order-mobile-card .card-product {
+  font-weight: 600;
+}
+.order-mobile-card .card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+@media (min-width: 641px) {
+  .demo-indicator {
+    position: fixed;
+    bottom: 6px;
+    right: 12px;
+    padding: 5px 9px;
+    background: #f8faffed;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    z-index: 15;
+    margin: 0;
+    font-size: 10px;
+  }
+  .topbar {
+    margin-bottom: 14px;
+  }
+  .tabs-row {
+    margin-bottom: 20px;
+  }
+  table {
+    font-size: 14px;
+  }
+  th {
+    font-size: 12px;
+  }
+  .order-context .metric-title {
+    font-size: 12px;
+  }
+}
+@media (max-width: 640px) {
+  .tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: visible;
+    gap: 3px;
+  }
+  .tabs a {
+    padding: 11px 9px;
+    min-width: 0;
+    font-size: 14px;
+  }
+  .tabs a.active {
+    border-radius: 7px;
+  }
+  .order-desktop-table {
+    display: none;
+  }
+  .order-mobile-list {
+    display: block;
+  }
+  .order-mobile-card .row-action {
+    min-height: 44px;
+  }
+  .filter-row > .field:first-child {
+    width: 100%;
+  }
+  .card-statuses small {
+    font-size: 12px;
+  }
+  .scope-note {
+    line-height: 1.55;
+  }
+  .orders-period {
+    margin-top: 0;
+  }
+  .pagination > .toolbar {
+    flex-wrap: wrap;
+  }
+}
