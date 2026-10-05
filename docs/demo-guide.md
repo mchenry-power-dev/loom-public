@@ -2,6 +2,8 @@
 
 The public demo is independently written portfolio software with synthetic records. It runs in the browser and does not connect to Shopify, an AI model, email, Slack, Teams, SMS, billing, or production services. Its behavior is separate from the product maturity described in the [product overview](product-overview.md) and [roadmap](roadmap.md).
 
+**[Open the interactive demo](https://mchenry-power-dev.github.io/loom-public/)**. Start with [Orders](https://mchenry-power-dev.github.io/loom-public/#/orders), [Purchase Options](https://mchenry-power-dev.github.io/loom-public/#/products/daily-greens), or [Reports](https://mchenry-power-dev.github.io/loom-public/#/reports).
+
 ## Run locally
 
 Use Node 24 and the committed lockfile. From the repository root:
