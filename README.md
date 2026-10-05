@@ -11,6 +11,10 @@ Loom™ is a private-pilot Shopify subscription commerce platform I independentl
 
 **Core technologies:** TypeScript · Node.js · React · Shopify Admin GraphQL · Prisma · PostgreSQL
 
+**[Try interactive demo](https://mchenry-power-dev.github.io/loom-public/)** — independently implemented browser workflows with sample data and simulated services. The demo does not change the private pilot's documented maturity.
+
+Try [reviewing sample orders](https://mchenry-power-dev.github.io/loom-public/#/orders?release=Needs+review), [editing purchase options](https://mchenry-power-dev.github.io/loom-public/#/products/daily-greens), or [building and exporting a report](https://mchenry-power-dev.github.io/loom-public/#/reports). [Demo guide](docs/demo-guide.md) · [Demo validation](docs/demo-validation.md)
+
 [Product Gallery](docs/product-gallery.md) · [Architecture](docs/architecture.md) · [Engineering Decisions](docs/engineering-decisions.md) · [Validation](docs/testing-validation.md)
 
 ## What Loom solves

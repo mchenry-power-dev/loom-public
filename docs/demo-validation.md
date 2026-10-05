@@ -15,7 +15,7 @@ Tested with Node **24.18.0**, npm **11.16.0**, Playwright **1.63.0**, Windows, a
 | Chromium 153.0.8010.12 desktop | All 34 cases verified, including targeted reruns described below |
 | Chromium mobile emulation, 390 × 844 | All 34 cases verified, including targeted reruns described below |
 | Playwright WebKit 26.6 | 5 core navigation, form, export, focus, and history cases passed |
-| Playwright Firefox 155 | Local engine initialization timed out; Linux CI is a required release gate |
+| Playwright Firefox 155 | Local engine initialization timed out; all 5 core cases passed in Linux CI |
 | Reviewed visual regression | 14/14 exact Windows Chromium comparisons passed |
 
 The final local functional run passed 71/73 cases. Two order-export assertions used an outdated fallback-link label; after correcting the locator, both passed and verified that the fallback downloads identical CSV bytes. The two 200% text cases were also rerun with an explicit wait for the loaded workspace after refresh; both passed. No failing application assertion was removed or skipped.
@@ -63,7 +63,11 @@ Source, fixtures, new documentation, and publication files were reviewed for cre
 
 Only this public repository was used. Other repositories, the profile, original screenshots, and existing maturity documentation were left alone. No project license was added; distributed dependency notices are retained. Browser storage uses only the versioned Loom demo key. Automation schedules and reminders do not run while the browser is closed, and local tests never deliver messages.
 
-The [Pages workflow](../.github/workflows/demo.yml) requires type/domain/export/build checks and four browser projects before a `main` deployment. Feature branches and PRs cannot deploy. The artifact contains only `demo/dist`; its `version.json` records the public commit ID. Hosted release verification is pending until CI and deployment succeed.
+The [Pages workflow](../.github/workflows/demo.yml) requires type/domain/export/build checks and four browser projects before a `main` deployment. Feature branches and PRs cannot deploy. The artifact contains only `demo/dist`; its `version.json` records the public commit ID.
+
+The [initial main release](https://github.com/mchenry-power-dev/loom-public/actions/runs/37245481103) passed all 78 Linux browser cases, build checks, and Pages deployment. The hosted `version.json` matched merge commit `aba87501b1bae21078699df5fcd680445e63c386`. A clean browser opened the base URL without a hash and the direct mobile purchase route; both rendered correctly, including the $30.60 subscription preview. The live [demo](https://mchenry-power-dev.github.io/loom-public/) is separate from the private application.
+
+All **68 hosted Chromium desktop/mobile tests passed** against that public release in fresh contexts. These exercised the complete primary workflows, authentic downloads, direct links and refresh, dirty-edit/history guards, storage isolation, all seven viewport widths, and 200% text. Hosted desktop Orders and mobile storefront captures were also inspected. The README and repository homepage were linked only after the deployed application and served commit were verified.
 
 ## Reproduce
 
